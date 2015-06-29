@@ -20,10 +20,11 @@ If you already have a ISO image (or we provide one for you) you can skip this st
 If you need a system please read bellow.
 
 ## Operation a : reduce partition size
+
 Open the usb key in `gparted` to reduce partition size to less than `1800 MB`. This will allow a faster copy.
 Then find the path of your key using `$ df -h`
 
-In this example, our key is /dev/sdc
+In this example, our key is `/dev/sdc`
 
 ## Operation b : unmount
 ```
@@ -32,6 +33,9 @@ umount /dev/sdc2
 ```
 
 ## Operation c : copy on your disk
+
+As we reduce the partition size to less than `1800 MB` we will copy the system using the following values : bs=4M count=450. Indeed, `450*4 = 1800`. Don't forget to adapt those values to your partition size.
+
 Then copy on your disk: 
 
 ```
